@@ -38,8 +38,8 @@ jobs:
         run: npm ci
 
       
-      - name: Intentional CI failure
-        run: npm run test-does-not-exist
+      - name: Check JavaScript syntax
+        run: find src -name "*.js" -print0 | xargs -0 -n1 node --check
 
       - name: Build Docker image
         run: docker build --tag getting-started-app:${{ github.sha }} .
