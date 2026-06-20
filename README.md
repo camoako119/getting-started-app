@@ -35,18 +35,23 @@ To experiment with GitHub Actions, I initially added an invalid npm command:
 ```bash
 npm run test-does-not-exist
 find src -name "*.js" -print0 | xargs -0 -n1 node --check
-
+```
 Also, the Dockerfile and compose.yaml files were not pushed to the branch
 which caused it to fail
 
 After pushing the correction, the continuous integration workflow passed. I then merged the pull request into main, which triggered the continuous delivery job and published the Docker image to GitHub Container Registry.
 
-### Task 5 Screenshot
+### Screenshots
 
+### CI Failure Screenshot
 ![CI Failure](screenshots/ci_failure_log.png)
+
+### CI Success Screenshot
 
 ![CI sucess](screenshots/ci_success.png)
 
+### Package
 ![Evidence of Package](screenshots/package.png)
 
+### CD Success
 ![CD Success](screenshots/cd_sucess.png)
